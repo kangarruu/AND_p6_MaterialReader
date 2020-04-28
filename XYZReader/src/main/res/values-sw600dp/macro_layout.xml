@@ -1,4 +1,10 @@
 <resources>
+
+    <dimen name="keyline_1">24dp</dimen>
+    <dimen name="keyline_2">80dp</dimen>
+
+    <!-- list -->
+
     <!-- detail -->
     <dimen name="detail_photo_height">384dp</dimen>
     <dimen name="detail_card_top_margin">384dp</dimen>

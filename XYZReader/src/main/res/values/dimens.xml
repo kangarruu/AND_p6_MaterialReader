@@ -1,4 +1,17 @@
 <resources>
+
+    <!-- list -->
+
+    <!--  AppbarLayout  -->
+    <dimen name="appbarlayout_height">56dp</dimen>
+    <dimen name="appbarlayout_elevation">8dp</dimen>
+
+    <!-- CollapsingToolbar -->
+
+
+    <!--  RecyclerView  <-->
+
+
     <!-- detail -->
     <dimen name="detail_title_text_size">32sp</dimen>
     <dimen name="detail_body_text_size">22sp</dimen>
@@ -7,5 +20,10 @@
     <dimen name="fab_elevation">2dp</dimen>
     <dimen name="fab_press_translation_z">6dp</dimen>
     <dimen name="fab_margin">24dp</dimen>
+
+
+    <!--Custom wrap_parent and match_parent-->
+    <item name="custom_wrap_content" format="integer" type="dimen">-2</item>
+    <item name="custom_match_parent" format="integer" type="dimen">-1</item>
 
 </resources>
