@@ -7,17 +7,18 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/toolbar_container"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/appbarlayout_height"
+        android:layout_height="wrap_content"
         android:background="?colorPrimary"
         android:elevation="@dimen/appbarlayout_elevation">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/toolbar_height"
             android:layout_gravity="bottom"
             app:contentInsetStart="@dimen/keyline_2"
-            app:logo="@drawable/logo"/>
+            app:logo="@drawable/logo"
+            app:layout_scrollFlags="scroll|enterAlways"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -32,10 +33,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="false"
-            android:paddingLeft="@dimen/list_side_margin"
-            android:paddingTop="4dp"
-            android:paddingRight="@dimen/list_side_margin"
-            android:paddingBottom="28dp"
+            android:paddingLeft="@dimen/rv_side_margin"
+            android:paddingTop="@dimen/rv_padding_top"
+            android:paddingRight="@dimen/rv_side_margin"
+            android:paddingBottom="@dimen/rv_padding_bottom"
             android:scrollbarStyle="outsideOverlay" />
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 

@@ -3,14 +3,28 @@
     <!-- list -->
 
     <!--  AppbarLayout  -->
-    <dimen name="appbarlayout_height">56dp</dimen>
+    <dimen name="toolbar_height">56dp</dimen>
     <dimen name="appbarlayout_elevation">8dp</dimen>
 
-    <!-- CollapsingToolbar -->
-
-
     <!--  RecyclerView  <-->
+    <dimen name="rv_padding_top">4dp</dimen>
+    <dimen name="rv_padding_bottom">28dp</dimen>
+    <dimen name="rv_side_margin">4dp</dimen>
 
+    <!-- List_item_article   -->
+    <dimen name="list_item_cardView_margin_top">4dp</dimen>
+    <dimen name="list_item_cardView_margin_bottom">4dp</dimen>
+    <dimen name="list_item_cardView_margin_end">4dp</dimen>
+    <dimen name="list_item_cardView_margin_start">4dp</dimen>
+
+    <dimen name="list_item_title_padding_top">16dp</dimen>
+    <dimen name="list_item_title_padding_bottom">4dp</dimen>
+    <dimen name="list_item_title_padding_end">16dp</dimen>
+    <dimen name="list_item_title_padding_start">16dp</dimen>
+
+    <dimen name="list_item_subtitle_padding_bottom">16dp</dimen>
+    <dimen name="list_item_subtitle_padding_end">16dp</dimen>
+    <dimen name="list_item_subtitle_padding_start">16dp</dimen>
 
     <!-- detail -->
     <dimen name="detail_title_text_size">32sp</dimen>

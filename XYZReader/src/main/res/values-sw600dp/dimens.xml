@@ -1,6 +1,13 @@
 <resources>
     <!--  AppbarLayout  -->
-    <dimen name="appbarlayout_height">128dp</dimen>
+    <dimen name="toolbar_height">128dp</dimen>
+
+    <!-- List_item_article   -->
+    <dimen name="list_item_cardView_margin_top">16dp</dimen>
+    <dimen name="list_item_cardView_margin_bottom">16dp</dimen>
+    <dimen name="list_item_cardView_margin_end">16dp</dimen>
+    <dimen name="list_item_cardView_margin_start">16dp</dimen>
+
 
     <!-- detail -->
     <dimen name="detail_title_text_size">42sp</dimen>
