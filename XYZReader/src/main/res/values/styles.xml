@@ -18,17 +18,16 @@
 <resources>
 
     <style name="Theme.Bacon" parent="@style/Theme.AppCompat.Light.NoActionBar">
-        <item name="android:windowActivityTransitions">true</item>
-        <item name="android:windowContentTransitions">true</item>
+
         <item name="colorPrimary">@color/theme_primary</item>
         <item name="colorPrimaryDark">@color/theme_primary_dark</item>
         <item name="colorAccent">@color/theme_accent</item>
-
         <!-- specify shared element transitions -->
+        <item name="android:windowActivityTransitions">true</item>
+        <item name="android:windowContentTransitions">true</item>
         <item name="android:windowSharedElementEnterTransition">
             @transition/change_image_transform</item>
-        <item name="android:windowSharedElementExitTransition">
-            @transition/change_image_transform</item>
+
     </style>
 
     <style name="Theme.Bacon.Detail">

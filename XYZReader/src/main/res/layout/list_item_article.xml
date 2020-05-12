@@ -24,7 +24,6 @@
             android:layout_height="wrap_content"
             android:background="@color/photo_placeholder"
             android:scaleType="centerCrop"
-            android:transitionName="@string/transition_photo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
