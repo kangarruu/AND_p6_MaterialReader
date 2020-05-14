@@ -48,14 +48,13 @@ import com.google.android.material.appbar.CollapsingToolbarLayout;
  * either contained in a {@link ArticleListActivity} in two-pane mode (on
  * tablets) or a {@link ArticleDetailActivity} on handsets.
  */
+
 public class ArticleDetailFragment extends Fragment implements
         LoaderManager.LoaderCallbacks<Cursor> {
     private static final String TAG = "ArticleDetailFragment";
 
     public static final String ARG_ITEM_ID = "item_id";
-    private static final String PAGER_CURRENT_POSITION = "pager_position";
 
-    private int pagerPosition;
     private Cursor mCursor;
     private long mItemId;
     private View mRootView;
@@ -65,14 +64,10 @@ public class ArticleDetailFragment extends Fragment implements
     private Toolbar toolbar;
 
     private int mTopInset;
-//    private View mPhotoContainerView;
     private ImageView mPhotoView;
     private int mScrollY;
-//    private boolean mIsCard = false;
+    private boolean mIsCard = false;
     private int mStatusBarFullOpacityBottom;
-
-    private CollapsingToolbarLayout collapsing_tlbr;
-    private AppBarLayout appBarLayout;
 
     private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.sss");
     // Use default locale format
@@ -87,10 +82,9 @@ public class ArticleDetailFragment extends Fragment implements
     public ArticleDetailFragment() {
     }
 
-    public static ArticleDetailFragment newInstance(long itemId, int position) {
+    public static ArticleDetailFragment newInstance(long itemId) {
         Bundle arguments = new Bundle();
         arguments.putLong(ARG_ITEM_ID, itemId);
-        arguments.putInt(PAGER_CURRENT_POSITION, position);
         ArticleDetailFragment fragment = new ArticleDetailFragment();
         fragment.setArguments(arguments);
         return fragment;
@@ -103,12 +97,8 @@ public class ArticleDetailFragment extends Fragment implements
         if (getArguments().containsKey(ARG_ITEM_ID)) {
             mItemId = getArguments().getLong(ARG_ITEM_ID);
         }
-        if (getArguments().containsKey(PAGER_CURRENT_POSITION)) {
-            pagerPosition = getArguments().getInt(PAGER_CURRENT_POSITION);
-        }
 
-
-//        mIsCard = getResources().getBoolean(R.bool.detail_is_card);
+        mIsCard = getResources().getBoolean(R.bool.detail_is_card);
         mStatusBarFullOpacityBottom = getResources().getDimensionPixelSize(
                 R.dimen.detail_card_top_margin);
         setHasOptionsMenu(true);
@@ -136,18 +126,7 @@ public class ArticleDetailFragment extends Fragment implements
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
         mRootView = inflater.inflate(R.layout.fragment_article_detail, container, false);
-
-//        mDrawInsetsFrameLayout = mRootView.findViewById(R.id.draw_insets_frame_layout);
-//        mDrawInsetsFrameLayout.setOnInsetsCallback(new DrawInsetsFrameLayout.OnInsetsCallback() {
-//            @Override
-//            public void onInsetsChanged(Rect insets) {
-//                mTopInset = insets.top;
-//            }
-//        });
-
         mPhotoView = mRootView.findViewById(R.id.photo);
-//        mPhotoView.setTransitionName(getString(R.string.transition_photo) + mItemId);
-//        mPhotoContainerView = mRootView.findViewById(R.id.photo_container);
 
         mStatusBarColorDrawable = new ColorDrawable(0);
 
@@ -177,7 +156,6 @@ public class ArticleDetailFragment extends Fragment implements
                     (int) (Color.blue(mMutedColor) * 0.9));
         }
         mStatusBarColorDrawable.setColor(color);
-//        mDrawInsetsFrameLayout.setInsetBackground(mStatusBarColorDrawable);
     }
 
     static float progress(float v, float min, float max) {
@@ -222,8 +200,13 @@ public class ArticleDetailFragment extends Fragment implements
             mRootView.setAlpha(0);
             mRootView.setVisibility(View.VISIBLE);
             mRootView.animate().alpha(1);
-//            titleView.setText(mCursor.getString(ArticleLoader.Query.TITLE));
-            toolbar.setTitle(mCursor.getString(ArticleLoader.Query.TITLE));
+
+            if(mIsCard){
+                getActivityCast().getSupportActionBar().setDisplayShowTitleEnabled(false);
+                titleView.setText(mCursor.getString(ArticleLoader.Query.TITLE));
+            } else {
+                toolbar.setTitle(mCursor.getString(ArticleLoader.Query.TITLE));
+            }
             Date publishedDate = parsePublishedDate();
             if (!publishedDate.before(START_OF_EPOCH.getTime())) {
                 bylineView.setText(Html.fromHtml(
@@ -266,7 +249,6 @@ public class ArticleDetailFragment extends Fragment implements
                     });
         } else {
             mRootView.setVisibility(View.GONE);
-//            titleView.setText("N/A");
             bylineView.setText("N/A" );
             bodyView.setText("N/A");
         }
@@ -312,15 +294,4 @@ public class ArticleDetailFragment extends Fragment implements
         }
         return super.onOptionsItemSelected(item);
     }
-
-    //    public int getUpButtonFloor() {
-//        if (mPhotoContainerView == null || mPhotoView.getHeight() == 0) {
-//            return Integer.MAX_VALUE;
-//        }
-//
-//        // account for parallax
-//        return mIsCard
-//                ? (int) mPhotoContainerView.getTranslationY() + mPhotoView.getHeight() - mScrollY
-//                : mPhotoView.getHeight() - mScrollY;
-//    }
 }

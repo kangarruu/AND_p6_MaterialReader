@@ -6,10 +6,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.lifecycle.Lifecycle;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.CursorLoader;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
@@ -52,10 +49,6 @@ public class ArticleDetailActivity extends AppCompatActivity
             if (getIntent() != null && getIntent().getData() != null) {
                 mStartId = ItemsContract.Items.getItemId(getIntent().getData());
             }
-        } else {
-//            mStartId = savedInstanceState.getLong(STARTING_ARTICLE_ID);
-//            pagerPosition = savedInstanceState.getInt(PAGER_CURRENT_POSITION);
-
         }
 
         getSupportLoaderManager().initLoader(0, null, this);
@@ -122,7 +115,7 @@ public class ArticleDetailActivity extends AppCompatActivity
         @Override
         public androidx.fragment.app.Fragment createFragment(int position) {
             mCursor.moveToPosition(position);
-            return ArticleDetailFragment.newInstance(mCursor.getLong(ArticleLoader.Query._ID), pagerPosition);
+            return ArticleDetailFragment.newInstance(mCursor.getLong(ArticleLoader.Query._ID));
         }
 
         @Override
@@ -133,10 +126,4 @@ public class ArticleDetailActivity extends AppCompatActivity
 
     }
 
-    @Override
-    protected void onSaveInstanceState(@NonNull Bundle outState) {
-        super.onSaveInstanceState(outState);
-//        outState.putLong(STARTING_ARTICLE_ID, mStartId);
-//        outState.putInt(PAGER_CURRENT_POSITION, pagerPosition);
-    }
 }

@@ -28,6 +28,7 @@
 
     <!-- detail -->
     <dimen name="detail_frag_bottom_scrim_height">160dp</dimen>
+    <dimen name="detail_frag_top_scrim_height">56dp</dimen>
 
     <dimen name="detail_title_text_size">32sp</dimen>
     <dimen name="detail_body_text_size">22sp</dimen>
@@ -36,6 +37,8 @@
     <dimen name="fab_elevation">2dp</dimen>
     <dimen name="fab_press_translation_z">6dp</dimen>
     <dimen name="fab_margin">24dp</dimen>
+
+    <dimen name="detail_card_elevation">1dp</dimen>
 
 
     <!--Custom wrap_parent and match_parent-->
