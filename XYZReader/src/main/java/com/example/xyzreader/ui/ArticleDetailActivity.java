@@ -12,6 +12,7 @@ import androidx.loader.content.CursorLoader;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.util.Log;
 import android.view.View;
 
 import com.example.xyzreader.R;
@@ -24,7 +25,7 @@ import com.example.xyzreader.data.ItemsContract;
 public class ArticleDetailActivity extends AppCompatActivity
         implements LoaderManager.LoaderCallbacks<Cursor> {
 
-//    private final String PAGER_CURRENT_POSITION = "pager_position";
+    //    private final String PAGER_CURRENT_POSITION = "pager_position";
     private final String STARTING_ARTICLE_ID = "article_ID";
 
 
