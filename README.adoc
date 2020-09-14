@@ -1,3 +1,15 @@
-= XYZ Reader Starter Code
+# AND_p6_MaterialReader
+## Udacity Android Developer Nanodegree project 6
 
-This repository stores the starter code for the XYZ Reader project in Udacity's Android Nanodegree.
+
+## Project Overview
+This project task is to use user feedback to implement changes in provided starter code to improve the UI and make it conform to Material Design. It replicates a common developer task of updating and changing an app's design as new standards are released.
+
+## Screenshots
+![Screen](https://github.com/kangarruu/AND_p6_MaterialReader/blob/master/CTlPc1Gv99BL_1024_500.png)
+
+## Skills Learned
+* Understanding the fundamentals of Android design.
+* Applying Material Design guidelines to a mobile application
+* Separating an interface into surfaces.
+* Effective use of transitions and motion.
